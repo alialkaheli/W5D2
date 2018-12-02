@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to subs_url
     else
-      flash.now[:errors] = ["error user or pass"]
+      flash.now[:errors] = [@user.errors.full_messages]
       render :new
     end
   end
